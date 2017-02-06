@@ -1,0 +1,256 @@
+/*初始化margin padding*/
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#view {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/*给魔方定位并加入3d动画效果并实现浏览器兼容*/
+#cube {
+    width: 300px;
+    height: 500px;
+    margin: 200px auto 0 auto;
+    -webkit-animation-name: animation;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 6s;
+    -webkit-transform-origin: 60px 60px 0;
+    -webkit-transform-style: preserve-3d;
+    animation-name: animation;
+    animationtiming-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 6s;
+    transform-origin: 60px 60px 0;
+    transform-style: preserve-3d;
+    -o-animation-name: animation;
+    -o-animation-timing-function: ease-in-out;
+    -o-animation-iteration-count: infinite;
+    -o-animation-duration: 6s;
+    -o-transform-origin: 60px 60px 0;
+    -o-transform-style: preserve-3d;
+    -moz-animation-name: animation;
+    -moz-animation-timing-function: ease-in-out;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-duration: 6s;
+    -moz-transform-origin: 60px 60px 0;
+    -moz-transform-style: preserve-3d;
+    -ms-animation-name: animation;
+    -ms-animation-timing-function: ease-in-out;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-duration: 6s;
+    -ms-transform-origin: 60px 60px 0;
+    -ms-transform-style: preserve-3d;
+
+}
+
+/*规定魔方运动轨迹*/
+@-webkit-keyframes animation {
+    0% {
+        -webkit-transform: translate(0, 0)
+    }
+    25% {
+        -webkit-transform: translate(200px, 0) rotateY(180deg);
+    }
+    50% {
+        -webkit-transform: translate(0, 0) rotateY(0deg);
+    }
+    75% {
+        -webkit-transform: translate(0, -200px) rotateX(180deg);
+    }
+    100% {
+        -webkit-transform: translate(0, 0px) rotateX(0deg);
+    }
+}
+
+@-moz-keyframes animation {
+    0% {
+        -moz-transform: translate(0, 0)
+    }
+    25% {
+        -moz-transform: translate(200px, 0) rotateY(180deg);
+    }
+    50% {
+        -moz-transform: translate(0, 0) rotateY(0deg);
+    }
+    75% {
+        -moz-transform: translate(0, -200px) rotateX(180deg);
+    }
+    100% {
+        -moz-transform: translate(0, 0px) rotateX(0deg);
+    }
+}
+
+@-o-keyframes animation {
+    0% {
+        -o-transform: translate(0, 0)
+    }
+    25% {
+        -o-transform: translate(200px, 0) rotateY(180deg);
+    }
+    50% {
+        -o-transform: translate(0, 0) rotateY(0deg);
+    }
+    75% {
+        -o-transform: translate(0, -200px) rotateX(180deg);
+    }
+    100% {
+        -o-transform: translate(0, 0px) rotateX(0deg);
+    }
+}
+
+@-ms-keyframes animation {
+    0% {
+        -ms-transform: translate(0, 0)
+    }
+    25% {
+        -ms-transform: translate(200px, 0) rotateY(180deg);
+    }
+    50% {
+        -ms-transform: translate(0, 0) rotateY(0deg);
+    }
+    75% {
+        -ms-transform: translate(0, -200px) rotateX(180deg);
+    }
+    100% {
+        -ms-transform: translate(0, 0px) rotateX(0deg);
+    }
+}
+
+@keyframes animation {
+    0% {
+        transform: translate(0, 0)
+    }
+    25% {
+        transform: translate(200px, 0) rotateY(180deg);
+    }
+    50% {
+        transform: translate(0, 0) rotateY(0deg);
+    }
+    75% {
+        transform: translate(0, -200px) rotateX(180deg);
+    }
+    100% {
+        transform: translate(0, 0px) rotateX(0deg);
+    }
+}
+
+/*定为每个面让他们组合成魔方*/
+.top {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    -webkit-transform: rotateX(90deg) translateZ(90px);
+    -moz-transform: rotateX(90deg) translateZ(90px);
+    -o-transform: rotateX(90deg) translateZ(90px);
+    -ms-transform: rotateX(90deg) translateZ(90px);
+    transform: rotateX(90deg) translateZ(90px);
+}
+
+.top div {
+    width: 60px;
+    height: 60px;
+    background-color: #ffff00;
+    border-radius: 15%;
+    float: left;
+}
+
+.front {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    -webkit-transform: translateZ(90px);
+    -moz-transform: translateZ(90px);
+    -o-transform: translateZ(90px);
+    -ms-transform: translateZ(90px);
+    transform: translateZ(90px);
+}
+
+.front div {
+    width: 60px;
+    height: 60px;
+    background-color: #ff0000;
+    border-radius: 15%;
+    float: left;
+}
+
+.bot {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    -webkit-transform: rotateX(-90deg) translateZ(90px);
+    -moz-transform: rotateX(-90deg) translateZ(90px);
+    -o-transform: rotateX(-90deg) translateZ(90px);
+    -ms-transform: rotateX(-90deg) translateZ(90px);
+    transform: rotateX(-90deg) translateZ(90px);
+}
+
+.bot div {
+    width: 60px;
+    height: 60px;
+    background-color: #fffaf0;
+    border-radius: 15%;
+    float: left;
+}
+
+.back {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    -webkit-transform: translateZ(-90px);
+    -moz-transform: translateZ(-90px);
+    -o-transform: translateZ(-90px);
+    -ms-transform: translateZ(-90px);
+    transform: translateZ(-90px);
+}
+
+.back div {
+    width: 60px;
+    height: 60px;
+    background-color: #ffa500;
+    border-radius: 15%;
+    float: left;
+}
+
+.left {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    -webkit-transform: rotateY(-90deg) translateZ(90px);
+    -moz-transform: rotateY(-90deg) translateZ(90px);
+    -o-transform: rotateY(-90deg) translateZ(90px);
+    transform: rotateY(-90deg) translateZ(90px);
+    -ms-transform: rotateY(-90deg) translateZ(90px);
+}
+
+.left div {
+    width: 60px;
+    height: 60px;
+    background-color: #0000ff;
+    border-radius: 15%;
+    float: left;
+}
+
+.right {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    -webkit-transform: rotateY(90deg) translateZ(90px);
+    -moz-transform: rotateY(90deg) translateZ(90px);
+    -o-transform: rotateY(90deg) translateZ(90px);
+    -ms-transform: rotateY(90deg) translateZ(90px);
+    transform: rotateY(90deg) translateZ(90px);
+}
+
+.right div {
+    width: 60px;
+    height: 60px;
+    background-color: #008000;
+    border-radius: 15%;
+    float: left;
+}
